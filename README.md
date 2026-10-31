@@ -10,7 +10,7 @@ White paper sobre el método de análisis de elevaciones de Mendikat.
 
 - [Ver el PDF en GitHub](mendikat-alma-elevation-analysis-white-paper.pdf)
 - [Fuente LaTeX](mendikat-alma-elevation-analysis-white-paper.tex)
-- [Release v1.0](https://github.com/mendikat/mendikat-alma-elevation-analysis-white-paper/releases/tag/v1.0)
+- [Última release](https://github.com/mendikat/mendikat-alma-elevation-analysis-white-paper/releases/latest)
 
 Para regenerar el PDF (dos pasadas, para el índice y las referencias):
 
@@ -58,6 +58,10 @@ Evaluado sobre los 1000 últimos tracks publicados y otros 1000 al azar con más
 
 - Con **100 m** de ventana, diferencia mediana de **+0,1 %** y el **88 %** de los tracks dentro de **±10 %**, sin depender de la densidad de puntos.
 - En tracks limpios obtiene algo menos de desnivel (**−1,5 %**), porque redondea cimas; en tracks ruidosos, algo más (**+4 %**), porque la histéresis usaba umbrales grandes que borraban desniveles reales.
+
+### Infografía
+
+![Infografía del perfil de elevaciones con media móvil gaussiana (ALMA): qué es, parámetros del método, cómo funciona en cuatro pasos, ejemplo de resultado y comparación con la histéresis](mendikat-tracks--filters-arnaud-legoux.png)
 
 ### Apéndices
 
