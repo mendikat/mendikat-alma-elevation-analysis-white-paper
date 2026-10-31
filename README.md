@@ -1,11 +1,16 @@
 # Suavizado del perfil de tracks GPS mediante la media móvil gaussiana de Arnaud Legoux (ALMA)
 
-*Javier Urrutia — [Mendikat](https://www.mendikat.net) — octubre de 2026*
+_Javier Urrutia — [Mendikat](https://www.mendikat.net) — octubre de 2026_
+
+![ALMA: un perfil más claro para disfrutar la montaña. A la izquierda, un perfil GPS con ruido; a la derecha, el mismo perfil suavizado con ALMA](mendikat-alma-elevation-analysis-image.png)
 
 White paper sobre el método de análisis de elevaciones de Mendikat.
 
-- [PDF](mendikat-alma-elevation-analysis-white-paper.pdf)
+**[⬇️ Descargar el white paper (PDF)](https://github.com/mendikat/mendikat-alma-elevation-analysis-white-paper/raw/main/mendikat-alma-elevation-analysis-white-paper.pdf)**
+
+- [Ver el PDF en GitHub](mendikat-alma-elevation-analysis-white-paper.pdf)
 - [Fuente LaTeX](mendikat-alma-elevation-analysis-white-paper.tex)
+- [Release v1.0](https://github.com/mendikat/mendikat-alma-elevation-analysis-white-paper/releases/tag/v1.0)
 
 Para regenerar el PDF (dos pasadas, para el índice y las referencias):
 
@@ -24,7 +29,7 @@ La altitud es la coordenada que peor resuelve un receptor GNSS (error vertical e
 
 ### Métodos anteriores
 
-- **Umbral fijo**: se ignoran las variaciones menores que *u* metros (histéresis). Ningún umbral sirve para todos: si es pequeño deja pasar ruido y si es grande borra desniveles reales.
+- **Umbral fijo**: se ignoran las variaciones menores que _u_ metros (histéresis). Ningún umbral sirve para todos: si es pequeño deja pasar ruido y si es grande borra desniveles reales.
 - **Histéresis con umbral adaptativo** (hasta la v18.6): se prueban umbrales de 2 a 36 m hasta que el desnivel se estabiliza (diferencia < 3 m). Se adapta a cada track, pero la regla de parada no tiene por qué coincidir con el fin del ruido y el resultado es discontinuo: un pequeño cambio en el track puede mover el desnivel decenas de metros.
 
 ### Método actual: media móvil gaussiana (ALMA)
@@ -57,7 +62,3 @@ Evaluado sobre los 1000 últimos tracks publicados y otros 1000 al azar con más
 ### Apéndices
 
 Implementaciones de referencia del algoritmo en **Python, Java, PHP y Rust**.
-
-### Código relacionado
-
-En Mendikat, el método está implementado en `lib/GPS/Elevation/GaussianElevationAnalyzer.php` y `lib/Math/Statistics/MovingAverage.php` (versión 18.6).
